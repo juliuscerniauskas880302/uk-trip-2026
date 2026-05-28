@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-city="london">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+
+  <!-- SEO -->
+  <title>Explore Three Cities — London • Portsmouth • Gosport</title>
+  <meta name="description" content="Your simple, fast travel companion for discovering the best sightseeing spots, historic attractions, shopping, parks, and hidden gems across London, Portsmouth, and Gosport.">
+  <meta name="keywords" content="London travel, Portsmouth tourism, Gosport attractions, UK trip, sightseeing guide, travel companion">
+  <meta name="author" content="Explore Three Cities">
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0a0e17">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="3 Cities">
+  <link rel="apple-touch-icon" href="images/icons/icon-192.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Explore Three Cities — London • Portsmouth • Gosport">
+  <meta property="og:description" content="Discover the best of London, Portsmouth & Gosport. Curated attractions, one-tap directions, and offline support.">
+  <meta property="og:type" content="website">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Preload font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <!-- App Shell -->
+  <main id="app">
+    <div class="content-wrapper" id="content">
+      <!-- Rendered by app.js -->
+    </div>
+  </main>
+
+  <!-- Bottom Tab Bar -->
+  <nav class="tab-bar" id="tab-bar" aria-label="City navigation">
+    <!-- Rendered by app.js -->
+  </nav>
+
+  <!-- Scripts (order matters: data → favorites → app) -->
+  <script src="js/data.js"></script>
+  <script src="js/favorites.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>
