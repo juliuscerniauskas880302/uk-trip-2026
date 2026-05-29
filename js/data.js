@@ -22,7 +22,7 @@ App.CITIES = {
     name: 'Portsmouth',
     tagline: 'Maritime Heritage City',
     emoji: '⚓',
-    description: '14 amazing waterfront experiences',
+    description: '18 amazing waterfront experiences',
     heroGradient: 'linear-gradient(135deg, #0d1b2a 0%, #1565c0 50%, #42a5f5 100%)',
   },
   gosport: {
@@ -30,7 +30,7 @@ App.CITIES = {
     name: 'Gosport',
     tagline: 'Hidden Coastal Gem',
     emoji: '🚢',
-    description: '12 unique discoveries await',
+    description: '15 unique discoveries await',
     heroGradient: 'linear-gradient(135deg, #0a1f1a 0%, #00897b 50%, #4db6ac 100%)',
   },
 };
@@ -717,8 +717,59 @@ App.PLACES = [
     lng: -1.1039,
   },
 
+  /* ─── Portsmouth Food & Drink ───────── */
+
+  {
+    id: 'portsmouth-pie-vinyl',
+    city: 'portsmouth',
+    name: 'Pie & Vinyl',
+    category: 'food',
+    emoji: '🍰',
+    description: 'Beloved Southsea café on Castle Road combining gourmet pies, homemade cakes, and a vinyl record shop. Try the steak & ale pie — a local legend.',
+    hours: 'Tue–Sat 10:00–17:00 · Sun 11:00–16:00 · Mon closed',
+    price: 'Pies from ~£6',
+    lat: 50.7889,
+    lng: -1.0861,
+  },
+  {
+    id: 'portsmouth-still-west',
+    city: 'portsmouth',
+    name: 'The Still & West',
+    category: 'food',
+    emoji: '🍻',
+    description: 'Historic waterfront pub at Bath Square in Old Portsmouth. Enjoy fish & chips, seafood, and real ales with spectacular harbour views from the terrace.',
+    hours: 'Mon–Sat 11:00–23:00 · Sun 12:00–22:30',
+    price: 'Mains from ~£12',
+    lat: 50.7900,
+    lng: -1.1068,
+  },
+  {
+    id: 'portsmouth-seafront-dining',
+    city: 'portsmouth',
+    name: 'Southsea Seafront Dining',
+    category: 'food',
+    emoji: '🌞',
+    description: 'String of beachfront cafés, ice cream parlours, and fish & chip shops along the Southsea seafront. Classic British seaside dining with Isle of Wight views.',
+    hours: 'Daily 9:00–21:00 (seasonal)',
+    price: 'Fish & chips from ~£8',
+    lat: 50.7810,
+    lng: -1.0860,
+  },
+  {
+    id: 'portsmouth-clarence-pier',
+    city: 'portsmouth',
+    name: 'Clarence Pier',
+    category: 'food',
+    emoji: '🍭',
+    description: 'Seaside amusement pier with classic fish & chips, doughnuts, candy floss, and arcade games. A fun, nostalgic British seaside experience for all ages.',
+    hours: 'Daily 10:00–21:00 (seasonal hours)',
+    price: 'Food from ~£5',
+    lat: 50.7830,
+    lng: -1.0972,
+  },
+
   /* ═══════════════════════════════════════
-     GOSPORT — 12 Places
+     GOSPORT — 15 Places
      ═══════════════════════════════════════ */
 
   {
@@ -867,5 +918,44 @@ App.PLACES = [
     price: 'Free entry',
     lat: 50.7868,
     lng: -1.1385,
+  },
+
+  /* ─── Gosport Food & Drink ─────────── */
+
+  {
+    id: 'gosport-stokes-bay-cafe',
+    city: 'gosport',
+    name: 'Stokes Bay Café',
+    category: 'food',
+    emoji: '☕',
+    description: 'Seasonal beachfront café right on the shingle at Stokes Bay. Hot drinks, bacon rolls, and ice cream with panoramic Isle of Wight views.',
+    hours: 'Daily 9:00–17:00 (seasonal · weather dependent)',
+    price: 'Snacks from ~£3',
+    lat: 50.7790,
+    lng: -1.1490,
+  },
+  {
+    id: 'gosport-alverbank',
+    city: 'gosport',
+    name: 'The Alverbank Country House',
+    category: 'food',
+    emoji: '🌿',
+    description: 'Charming country house hotel in Alverstoke with a well-regarded restaurant and beautiful gardens. Afternoon tea, Sunday roasts, and seasonal British menus.',
+    hours: 'Daily 12:00–14:30 · 18:00–21:00',
+    price: 'Mains from ~£14 · Afternoon tea ~£20',
+    lat: 50.7875,
+    lng: -1.1370,
+  },
+  {
+    id: 'gosport-waterfront-pubs',
+    city: 'gosport',
+    name: 'Gosport Waterfront Pubs',
+    category: 'food',
+    emoji: '🍺',
+    description: 'Cluster of welcoming pubs near the ferry terminal and harbour. Enjoy real ales, pub grub, and views of Portsmouth Harbour and passing Navy ships.',
+    hours: 'Daily 11:00–23:00',
+    price: 'Mains from ~£10',
+    lat: 50.7952,
+    lng: -1.1180,
   },
 ];

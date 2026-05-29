@@ -13,6 +13,7 @@ window.App = window.App || {};
     city: 'london',
     category: 'all',
     view: 'explore', // 'explore' | 'favorites'
+    searchQuery: '',
   };
 
   let observer = null;
@@ -74,6 +75,7 @@ window.App = window.App || {};
           state.city = btn.dataset.city;
           state.category = 'all';
         }
+        state.searchQuery = '';
         updateCityTheme();
         renderTabBar();
         renderView();
@@ -92,7 +94,9 @@ window.App = window.App || {};
     const content = $('#content');
     content.innerHTML = '';
 
-    if (state.view === 'favorites') {
+    if (state.searchQuery) {
+      renderSearchResults(content);
+    } else if (state.view === 'favorites') {
       renderFavorites(content);
     } else {
       renderCityView(content);
@@ -122,6 +126,8 @@ window.App = window.App || {};
         <p class="city-hero__count">${city.description}</p>
       </section>
 
+      ${renderSearchBar()}
+
       ${renderCategoryPills()}
 
       <div id="install-banner-slot"></div>
@@ -131,10 +137,12 @@ window.App = window.App || {};
         : renderEmptyState('🔍', 'No places found', 'Try selecting a different category')
       }
 
+      ${state.city === 'london' ? renderTransportCard() : ''}
       ${state.city === 'gosport' ? renderContactCard() : ''}
     `;
 
     attachCardEvents(container);
+    attachSearchEvents(container);
     showInstallBanner();
   }
 
@@ -173,6 +181,8 @@ window.App = window.App || {};
         <p class="favorites-header__count">${favPlaces.length} place${favPlaces.length !== 1 ? 's' : ''} saved</p>
       </header>
 
+      ${renderSearchBar()}
+
       ${favPlaces.length > 0
         ? `<div class="places-grid" role="list">${favPlaces.map(p => renderPlaceCard(p, true)).join('')}</div>`
         : renderEmptyState('💝', 'No saved places yet', 'Tap the heart on any place to save it here')
@@ -180,6 +190,7 @@ window.App = window.App || {};
     `;
 
     attachCardEvents(container);
+    attachSearchEvents(container);
   }
 
   /* ─── Place Card ───────────────────── */
@@ -262,6 +273,138 @@ window.App = window.App || {};
           <span class="directions-btn__icon">📍</span>
           Get Directions to Cousin's House
         </a>
+      </section>
+    `;
+  }
+
+  /* ─── Search Bar ─────────────────── */
+  function renderSearchBar() {
+    return `
+      <div class="search-bar" id="search-bar">
+        <span class="search-bar__icon">🔍</span>
+        <input type="text"
+               class="search-bar__input"
+               id="search-input"
+               placeholder="Search all places..."
+               autocomplete="off"
+               value="${state.searchQuery}">
+        <button class="search-bar__clear ${state.searchQuery ? 'search-bar__clear--visible' : ''}"
+                id="search-clear" aria-label="Clear search">✕</button>
+      </div>
+    `;
+  }
+
+  function attachSearchEvents(container) {
+    const input = $('#search-input', container);
+    const clearBtn = $('#search-clear', container);
+    if (!input) return;
+
+    let debounceTimer;
+    input.addEventListener('input', () => {
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        state.searchQuery = input.value.trim();
+        if (state.searchQuery) {
+          renderSearchResults($('#content'));
+        } else {
+          renderView();
+        }
+      }, 200);
+    });
+
+    clearBtn?.addEventListener('click', () => {
+      state.searchQuery = '';
+      renderView();
+    });
+  }
+
+  /* ─── Search Results ─────────────── */
+  function renderSearchResults(container) {
+    const q = state.searchQuery.toLowerCase();
+    const results = App.PLACES.filter(p =>
+      p.name.toLowerCase().includes(q) ||
+      p.description.toLowerCase().includes(q) ||
+      p.category.toLowerCase().includes(q)
+    );
+
+    container.innerHTML = `
+      <header class="favorites-header">
+        <span class="favorites-header__emoji">🔍</span>
+        <h1 class="favorites-header__title">Search Results</h1>
+        <p class="favorites-header__count">${results.length} place${results.length !== 1 ? 's' : ''} found</p>
+      </header>
+
+      ${renderSearchBar()}
+
+      ${results.length > 0
+        ? `<div class="places-grid" role="list">${results.map(p => renderPlaceCard(p, true)).join('')}</div>`
+        : renderEmptyState('🙅', 'No matches', 'Try a different search term')
+      }
+    `;
+
+    attachCardEvents(container);
+    attachSearchEvents(container);
+
+    // Re-focus and position cursor
+    const input = $('#search-input', container);
+    if (input) {
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+
+    requestAnimationFrame(() => observeCards());
+  }
+
+  /* ─── TfL Transport Info Card ─────── */
+  function renderTransportCard() {
+    return `
+      <section class="contact-card transport-card" id="transport-card">
+        <div class="contact-card__header">
+          <span class="contact-card__icon">🚇</span>
+          <h2 class="contact-card__title">Getting Around London</h2>
+        </div>
+        <div class="contact-card__body">
+
+          <div class="transport-section">
+            <h3 class="transport-section__title">🚌 Bus & Tram (Oyster / Contactless)</h3>
+            <div class="transport-row">
+              <span>Single fare</span><strong>£1.75</strong>
+            </div>
+            <div class="transport-row">
+              <span>Daily cap</span><strong>£5.25</strong>
+            </div>
+            <p class="transport-tip">💡 <strong>Hopper fare:</strong> Unlimited bus/tram rides within 1 hour for a single £1.75 fare. Tap in only (no tap out needed).</p>
+          </div>
+
+          <div class="transport-section">
+            <h3 class="transport-section__title">🚇 Tube, DLR, Overground & Elizabeth Line</h3>
+            <table class="transport-table">
+              <thead>
+                <tr><th>Zones</th><th>Daily Cap</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Zone 1 only</td><td>£8.90</td></tr>
+                <tr><td>Zones 1–2</td><td>£8.90</td></tr>
+                <tr><td>Zones 1–3</td><td>£10.50</td></tr>
+                <tr><td>Zones 1–4</td><td>£12.80</td></tr>
+                <tr><td>Zones 1–5</td><td>£15.30</td></tr>
+                <tr><td>Zones 1–6</td><td>£16.30</td></tr>
+              </tbody>
+            </table>
+            <p class="transport-tip">💡 Once you hit the daily cap, further journeys in those zones are <strong>free</strong>. Day runs 04:30–04:29.</p>
+          </div>
+
+          <div class="transport-section">
+            <h3 class="transport-section__title">💳 Tips</h3>
+            <ul class="transport-tips-list">
+              <li>Use <strong>contactless bank card</strong> or <strong>Oyster</strong> — never buy paper tickets</li>
+              <li>Mixing Tube + bus? You'll be capped at the <strong>zonal rate</strong> (not bus-only £5.25)</li>
+              <li>Weekly cap (Mon–Sun): e.g. <strong>£44.70</strong> for Zones 1–2</li>
+              <li>Children under 11 travel <strong>free</strong> on all TfL services</li>
+            </ul>
+          </div>
+
+        </div>
       </section>
     `;
   }
