@@ -14,7 +14,7 @@ App.CITIES = {
     name: 'London',
     tagline: 'Explore the Capital',
     emoji: '🇬🇧',
-    description: '20 incredible places to discover',
+    description: '38 incredible places to discover',
     heroGradient: 'linear-gradient(135deg, #1a1a2e 0%, #e53935 50%, #ff6f00 100%)',
   },
   portsmouth: {
@@ -22,7 +22,7 @@ App.CITIES = {
     name: 'Portsmouth',
     tagline: 'Maritime Heritage City',
     emoji: '⚓',
-    description: '10 amazing waterfront experiences',
+    description: '14 amazing waterfront experiences',
     heroGradient: 'linear-gradient(135deg, #0d1b2a 0%, #1565c0 50%, #42a5f5 100%)',
   },
   gosport: {
@@ -30,7 +30,7 @@ App.CITIES = {
     name: 'Gosport',
     tagline: 'Hidden Coastal Gem',
     emoji: '🚢',
-    description: '9 unique discoveries await',
+    description: '12 unique discoveries await',
     heroGradient: 'linear-gradient(135deg, #0a1f1a 0%, #00897b 50%, #4db6ac 100%)',
   },
 };
@@ -63,7 +63,7 @@ App.CATEGORY_GRADIENTS = {
 App.PLACES = [
 
   /* ═══════════════════════════════════════
-     LONDON — 20 Places
+     LONDON — 38 Places
      ═══════════════════════════════════════ */
 
   {
@@ -238,6 +238,81 @@ App.PLACES = [
     lng: -0.0994,
   },
 
+  /* ─── London Parks & Green Spaces ──── */
+
+  {
+    id: 'london-regents-park',
+    city: 'london',
+    name: 'Regent\'s Park',
+    category: 'parks',
+    emoji: '🌹',
+    description: 'Elegant Royal Park with Queen Mary\'s Rose Garden (12,000 roses), an open-air theatre, boating lake, and London Zoo at its northern edge.',
+    hours: 'Daily 5:00–21:30 (varies seasonally)',
+    price: 'Free',
+    lat: 51.5273,
+    lng: -0.1536,
+  },
+  {
+    id: 'london-st-james-park',
+    city: 'london',
+    name: 'St James\'s Park',
+    category: 'parks',
+    emoji: '🦢',
+    description: 'The oldest Royal Park with stunning views of Buckingham Palace across the lake. Famous for its resident pelicans fed daily at 14:30.',
+    hours: 'Daily 5:00–00:00',
+    price: 'Free',
+    lat: 51.5025,
+    lng: -0.1340,
+  },
+  {
+    id: 'london-greenwich-park',
+    city: 'london',
+    name: 'Greenwich Park',
+    category: 'parks',
+    emoji: '🔭',
+    description: 'UNESCO World Heritage Site with the Royal Observatory, the Prime Meridian Line, and spectacular panoramic views of Canary Wharf and the Thames.',
+    hours: 'Daily 6:00–18:00 (winter) · 6:00–21:00 (summer)',
+    price: 'Free (Observatory ~£18)',
+    lat: 51.4769,
+    lng: -0.0005,
+  },
+  {
+    id: 'london-kew-gardens',
+    city: 'london',
+    name: 'Kew Gardens',
+    category: 'parks',
+    emoji: '🌺',
+    description: 'UNESCO-listed Royal Botanic Gardens with 50,000+ living plants, the iconic Palm House glasshouse, a treetop walkway, and seasonal flower displays.',
+    hours: 'Daily 10:00–18:00 (summer) · 10:00–16:00 (winter)',
+    price: '~£19',
+    lat: 51.4787,
+    lng: -0.2956,
+  },
+  {
+    id: 'london-richmond-park',
+    city: 'london',
+    name: 'Richmond Park',
+    category: 'parks',
+    emoji: '🦌',
+    description: 'London\'s largest Royal Park (2,500 acres) with 600 free-roaming red and fallow deer. Perfect for cycling, walking, and spotting wildlife.',
+    hours: 'Daily 7:00–dusk (seasonal)',
+    price: 'Free',
+    lat: 51.4430,
+    lng: -0.2744,
+  },
+  {
+    id: 'london-hampstead-heath',
+    city: 'london',
+    name: 'Hampstead Heath',
+    category: 'parks',
+    emoji: '🌄',
+    description: 'Wild ancient heathland with swimming ponds, woodland trails, and Parliament Hill — one of the best panoramic viewpoints across the entire London skyline.',
+    hours: 'Open 24/7',
+    price: 'Free',
+    lat: 51.5613,
+    lng: -0.1640,
+  },
+
   /* ─── Harry Potter Locations ───────── */
 
   {
@@ -313,8 +388,161 @@ App.PLACES = [
     lng: -0.1534,
   },
 
+  /* ─── Leicester Square ─────────────── */
+
+  {
+    id: 'london-leicester-square',
+    city: 'london',
+    name: 'Leicester Square',
+    category: 'sights',
+    emoji: '🌟',
+    description: 'London\'s glittering entertainment hub surrounded by cinemas, theatres, and restaurants. Home to major film premieres including every Harry Potter premiere.',
+    hours: 'Open 24/7',
+    price: 'Free',
+    lat: 51.5103,
+    lng: -0.1301,
+  },
+
+  /* ─── Best Eats in London ──────────── */
+
+  {
+    id: 'london-brick-lane',
+    city: 'london',
+    name: 'Brick Lane',
+    category: 'food',
+    emoji: '🍛',
+    description: 'Famous "Curry Mile" in the heart of East London. Dozens of Bengali and Indian restaurants, plus vintage shops, street art, and a buzzing Sunday market.',
+    hours: 'Restaurants: Daily 11:00–23:00 · Market: Sun 10:00–17:00',
+    price: 'Mains from ~£8',
+    lat: 51.5215,
+    lng: -0.0715,
+  },
+  {
+    id: 'london-chinatown',
+    city: 'london',
+    name: 'Chinatown',
+    category: 'food',
+    emoji: '🥟',
+    description: 'Vibrant district around Gerrard Street packed with authentic Chinese, Taiwanese, Japanese, and Vietnamese restaurants. Try the dim sum and bubble tea.',
+    hours: 'Daily 11:00–23:00 (varies by restaurant)',
+    price: 'Mains from ~£10',
+    lat: 51.5113,
+    lng: -0.1312,
+  },
+  {
+    id: 'london-maltby-street',
+    city: 'london',
+    name: 'Maltby Street Market',
+    category: 'food',
+    emoji: '🥩',
+    description: 'Hidden artisan food market under Victorian railway arches in Bermondsey. Gourmet street food, craft beer, and specialist producers — a local favourite.',
+    hours: 'Sat 10:00–17:00 · Sun 11:00–16:00',
+    price: 'Free entry · Street food from ~£6',
+    lat: 51.4985,
+    lng: -0.0760,
+  },
+  {
+    id: 'london-seven-dials',
+    city: 'london',
+    name: 'Seven Dials Market',
+    category: 'food',
+    emoji: '🌮',
+    description: 'Trendy indoor food hall near Covent Garden with 15+ street food vendors, a Cheese Bar, and a gin cocktail bar in a beautiful converted warehouse.',
+    hours: 'Mon–Sat 10:00–22:00 · Sun 12:00–21:00',
+    price: 'Dishes from ~£7',
+    lat: 51.5138,
+    lng: -0.1267,
+  },
+  {
+    id: 'london-flat-iron-square',
+    city: 'london',
+    name: 'Flat Iron Square',
+    category: 'food',
+    emoji: '🍕',
+    description: 'Buzzing open-air food court near Borough Market with global street food, craft beer bars, live music, and a relaxed community vibe. Great for dinner.',
+    hours: 'Mon–Wed 8:00–23:00 · Thu–Sat 8:00–00:00 · Sun 10:00–22:00',
+    price: 'Dishes from ~£7',
+    lat: 51.5027,
+    lng: -0.0974,
+  },
+  {
+    id: 'london-spitalfields',
+    city: 'london',
+    name: 'Old Spitalfields Market',
+    category: 'food',
+    emoji: '🧁',
+    description: 'Historic East London market (est. 1638) with excellent street food, artisan crafts, vintage fashion, and antiques. Busiest on Thursdays and weekends.',
+    hours: 'Daily 10:00–20:00 · Restaurants until 23:00',
+    price: 'Free entry · Food from ~£6',
+    lat: 51.5196,
+    lng: -0.0756,
+  },
+
+  /* ─── More Harry Potter Locations ──── */
+
+  {
+    id: 'london-minalima',
+    city: 'london',
+    name: 'House of MinaLima',
+    category: 'wizard',
+    emoji: '📜',
+    description: 'Free gallery in Soho by the graphic designers behind all the Harry Potter films. See original props: the Marauder\'s Map, Daily Prophet, Hogwarts letters, and more.',
+    hours: 'Daily 10:00–19:00',
+    price: 'Free',
+    lat: 51.5134,
+    lng: -0.1365,
+  },
+  {
+    id: 'london-australia-house',
+    city: 'london',
+    name: 'Australia House — Gringotts',
+    category: 'wizard',
+    emoji: '🏦',
+    description: 'The stunning Edwardian building on the Strand used as the interior of Gringotts Wizarding Bank. The ornate banking hall is unmistakable.',
+    hours: 'Exterior: 24/7 · Interior: not open to public',
+    price: 'Free (exterior only)',
+    lat: 51.5131,
+    lng: -0.1163,
+  },
+  {
+    id: 'london-claremont-square',
+    city: 'london',
+    name: 'Claremont Square — Grimmauld Place',
+    category: 'wizard',
+    emoji: '🏚️',
+    description: 'This elegant Georgian square in Islington was used as the exterior of 12 Grimmauld Place — the Black family home and Order of the Phoenix headquarters.',
+    hours: 'Open 24/7 (public square)',
+    price: 'Free',
+    lat: 51.5296,
+    lng: -0.1099,
+  },
+  {
+    id: 'london-st-pancras',
+    city: 'london',
+    name: 'St Pancras Station',
+    category: 'wizard',
+    emoji: '🚂',
+    description: 'The stunning Gothic Revival façade was used as the exterior of King\'s Cross Station in the films. Harry and Ron fly the Ford Anglia from here in Chamber of Secrets.',
+    hours: 'Open 24/7',
+    price: 'Free',
+    lat: 51.5321,
+    lng: -0.1262,
+  },
+  {
+    id: 'london-cecil-court',
+    city: 'london',
+    name: 'Cecil Court — Real Diagon Alley',
+    category: 'wizard',
+    emoji: '📚',
+    description: 'Charming pedestrian alley of antiquarian bookshops near Leicester Square. Said to be J.K. Rowling\'s inspiration for Diagon Alley — it truly feels magical.',
+    hours: 'Mon–Sat 10:00–18:00 · Sun limited',
+    price: 'Free',
+    lat: 51.5105,
+    lng: -0.1275,
+  },
+
   /* ═══════════════════════════════════════
-     PORTSMOUTH — 10 Places
+     PORTSMOUTH — 14 Places
      ═══════════════════════════════════════ */
 
   {
@@ -438,8 +666,59 @@ App.PLACES = [
     lng: -1.1048,
   },
 
+  /* ─── Portsmouth Shopping ───────────── */
+
+  {
+    id: 'portsmouth-commercial-road',
+    city: 'portsmouth',
+    name: 'Commercial Road',
+    category: 'shopping',
+    emoji: '🏬',
+    description: 'Portsmouth\'s main high street with Primark, TK Maxx, H&M, and the Cascades Shopping Centre. The city\'s busiest retail strip.',
+    hours: 'Mon–Sat 9:00–17:30 · Sun 10:30–16:30',
+    price: 'Free entry',
+    lat: 50.7985,
+    lng: -1.0918,
+  },
+  {
+    id: 'portsmouth-palmerston-road',
+    city: 'portsmouth',
+    name: 'Palmerston Road, Southsea',
+    category: 'shopping',
+    emoji: '☕',
+    description: 'Southsea\'s charming shopping street lined with independent boutiques, coffee shops, delis, and gift stores. A relaxed alternative to the high street.',
+    hours: 'Mon–Sat 9:00–17:30 · Sun 10:00–16:00',
+    price: 'Free entry',
+    lat: 50.7866,
+    lng: -1.0870,
+  },
+  {
+    id: 'portsmouth-albert-road',
+    city: 'portsmouth',
+    name: 'Albert Road, Southsea',
+    category: 'shopping',
+    emoji: '🎵',
+    description: 'Bohemian street packed with vintage shops, record stores, tattoo parlours, independent bars, and quirky cafés. The creative heart of Southsea.',
+    hours: 'Daily · Hours vary by shop',
+    price: 'Free entry',
+    lat: 50.7879,
+    lng: -1.0815,
+  },
+  {
+    id: 'portsmouth-port-solent',
+    city: 'portsmouth',
+    name: 'Port Solent',
+    category: 'shopping',
+    emoji: '⛵',
+    description: 'Waterfront leisure village with shops, restaurants, a Vue cinema, and a marina. Great for an evening out with harbour views.',
+    hours: 'Daily 10:00–22:00 (shops close earlier)',
+    price: 'Free entry · Free parking',
+    lat: 50.8423,
+    lng: -1.1039,
+  },
+
   /* ═══════════════════════════════════════
-     GOSPORT — 9 Places
+     GOSPORT — 12 Places
      ═══════════════════════════════════════ */
 
   {
@@ -549,5 +828,44 @@ App.PLACES = [
     price: '~£3.80 return',
     lat: 50.7960,
     lng: -1.1170,
+  },
+
+  /* ─── Gosport Shopping ─────────────── */
+
+  {
+    id: 'gosport-stoke-road',
+    city: 'gosport',
+    name: 'Stoke Road',
+    category: 'shopping',
+    emoji: '🛒',
+    description: 'Gosport\'s traditional local shopping street with independent stores, charity shops with hidden treasures, bakeries, and everyday essentials.',
+    hours: 'Mon–Sat 9:00–17:30 · Sun limited',
+    price: 'Free entry',
+    lat: 50.7926,
+    lng: -1.1312,
+  },
+  {
+    id: 'gosport-market',
+    city: 'gosport',
+    name: 'Gosport Tuesday Market',
+    category: 'shopping',
+    emoji: '🧺',
+    description: 'Popular weekly street market in the High Street with fresh fruit & veg, clothing, household goods, flowers, and local produce. A Gosport tradition.',
+    hours: 'Tuesdays 8:30–15:00',
+    price: 'Free entry',
+    lat: 50.7950,
+    lng: -1.1178,
+  },
+  {
+    id: 'gosport-alverstoke-village',
+    city: 'gosport',
+    name: 'Alverstoke Village',
+    category: 'shopping',
+    emoji: '🏡',
+    description: 'Picturesque village centre with a lovely deli, gift shops, a traditional pub, and a community feel. Perfect stop before or after Stokes Bay.',
+    hours: 'Mon–Sat 9:00–17:00 · Sun limited',
+    price: 'Free entry',
+    lat: 50.7868,
+    lng: -1.1385,
   },
 ];
